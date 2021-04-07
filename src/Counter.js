@@ -21,7 +21,7 @@ export default class Counter extends Component {
                 <button onClick={() => this.changeAmount(-1)}>-</button>
                 <span>{this.state.count}</span>
                 <button onClick={() => this.changeAmount(1)}>+</button>
-          </div>
+            </div>
         )
     }
 }
