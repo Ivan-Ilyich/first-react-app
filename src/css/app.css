@@ -1,0 +1,22 @@
+@import-normalize;
+@import 'font.css';
+@import 'header.css';
+@import 'ingredient-list.css';
+@import 'ingredients.css';
+@import 'recipe-list.css';
+@import 'recipe.css';
+@import 'instructions.css';
+@import 'info.css';
+@import 'button.css';
+
+*,
+*::before,
+*::after {
+    font-family: Gotham Rounded,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 25px;
+}
