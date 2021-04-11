@@ -4,11 +4,14 @@
     border-right: 1px solid black;
 }
 
-.btn {
-    border: none;
-    outline: none;
-}
-
 .recipe-list__add-recipe-btn-container {
     text-align: center;
+}
+
+.ingredient__grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    row-gap: .1rem;
+    column-gap: 1.6rem;
+    justify-content: flex-start;
 }

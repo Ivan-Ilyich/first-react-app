@@ -2,10 +2,7 @@
 @import 'font.css';
 @import 'header.css';
 @import 'ingredient-list.css';
-@import 'ingredients.css';
-@import 'recipe-list.css';
 @import 'recipe.css';
-@import 'instructions.css';
 @import 'info.css';
 @import 'button.css';
 
@@ -19,4 +16,8 @@
 
 html {
     font-size: 25px;
+}
+
+.mr-1 {
+    margin-right: .2rem;
 }

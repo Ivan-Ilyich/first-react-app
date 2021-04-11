@@ -12,9 +12,11 @@ export default function IngredientList({ ingredients }) {
         )
     })
     return (
-        <div>
-            <span>Ingrediens:</span>
-            <div>
+        <div className="recipe__row">
+            <span className="recipe__label">
+                Ingrediens:
+            </span>
+            <div className="recipe__value recipe__value--indented ingredient__grid">
                 {ingredientElements}
             </div>
         </div>

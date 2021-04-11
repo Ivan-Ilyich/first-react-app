@@ -1,5 +1,6 @@
 .btn {
     background: none;
+    outline: none;
     border: none;
     font-weight: bold;
     border-radius: 5px;
@@ -16,4 +17,14 @@
 
 .btn--primary:hover {
     background-color: hsl(200, 100%, 35%);
+}
+
+.btn--danger {
+    color: white;
+    background-color: hsl(0, 100%, 50%);
+    transition: .3s ease-in;
+}
+
+.btn--danger:hover {
+    background-color: hsl(0, 100%, 35%);
 }
