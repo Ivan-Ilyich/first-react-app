@@ -1,8 +1,16 @@
 import React from 'react'
 import Recipe from './Recipe'
 
-export default function RecipeList({ recipes }) {
-    console.log(recipes);
+export default function RecipeList(props) {
+
+    const {
+        recipes,
+        handleAddRecipe,
+        handleDeleteRecipe
+    } = props
+
+    console.log(`This is the recipeLIST props`, props);
+
     return (
         <div className="recipe-list">
             <div>
@@ -10,13 +18,19 @@ export default function RecipeList({ recipes }) {
                     return (
                         <Recipe 
                             key={recipe.id} 
-                            {...recipe} 
+                            {...recipe}
+                            handleDeleteRecipe={handleDeleteRecipe}
                         />
                     )
                 })}
             </div>
             <div className="recipe-list__add-recipe-btn-container">
-                <button className="btn btn--primary">Add Recipe</button>
+                <button 
+                    className="btn btn--primary"
+                    onClick={handleAddRecipe}
+                >
+                    Add Recipe
+                </button>
             </div>
         </div>
     )
