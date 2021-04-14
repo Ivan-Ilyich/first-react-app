@@ -5,6 +5,7 @@
 @import 'recipe.css';
 @import 'info.css';
 @import 'button.css';
+@import 'recipe-edit.css';
 
 *,
 *::before,
@@ -12,6 +13,7 @@
     font-family: Gotham Rounded,sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {

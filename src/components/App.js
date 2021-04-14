@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from './RecipeList';
+import RecipeEdit from './RecipeEdit';
 import '../css/app.css'
 import { v4 } from 'uuid';
 
@@ -45,11 +46,14 @@ function App() {
   }
 
   return (
-    <RecipeList 
-      recipes={recipes}
-      handleAddRecipe={handleAddRecipe}
-      handleDeleteRecipe={handleDeleteRecipe}
-    />
+    <>
+      <RecipeList 
+        recipes={recipes}
+        handleAddRecipe={handleAddRecipe}
+        handleDeleteRecipe={handleDeleteRecipe}
+      />
+      <RecipeEdit />
+    </>
   )
 }
 
