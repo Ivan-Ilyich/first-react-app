@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Instructions({ instructions }) {
-    console.log('This is the instructions -->',instructions);
+    // console.log('This is the instructions -->',instructions);
     return (
         <div className="recipe__row">
             <span className="recipe__label">

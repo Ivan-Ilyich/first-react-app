@@ -6,10 +6,11 @@ export default function RecipeList(props) {
     const {
         recipes,
         handleAddRecipe,
-        handleDeleteRecipe
+        handleDeleteRecipe,
+        handleSelectedRecipe
     } = props
 
-    console.log(`This is the recipeLIST props`, props);
+    // console.log(`This is the recipeLIST props`, props);
 
     return (
         <div className="recipe-list">
@@ -20,6 +21,7 @@ export default function RecipeList(props) {
                             key={recipe.id} 
                             {...recipe}
                             handleDeleteRecipe={handleDeleteRecipe}
+                            handleSelectedRecipe={handleSelectedRecipe}
                         />
                     )
                 })}

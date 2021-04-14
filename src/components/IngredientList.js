@@ -3,7 +3,7 @@ import Ingredients from './Ingredients'
 
 export default function IngredientList({ ingredients }) {
     
-    console.log('This is the INGREDIENTS -->', ingredients);
+    // console.log('This is the INGREDIENTS -->', ingredients);
 
     const ingredientElements = ingredients.map(ingredient => {
         return (

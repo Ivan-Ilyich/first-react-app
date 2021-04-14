@@ -5,7 +5,7 @@ import IngredientList from './IngredientList'
 import Instructions from './Instructions'
 
 export default function Recipe(props) {
-    console.log('This is the Recipe props -->',props);
+    // console.log('This is the Recipe props -->',props);
 
     const {
         id,
@@ -14,6 +14,7 @@ export default function Recipe(props) {
         instructions,
         ingredients,
         handleDeleteRecipe,
+        handleSelectedRecipe
     } = props
     
     return (
@@ -21,7 +22,8 @@ export default function Recipe(props) {
             <Header 
                 name={name} 
                 id={id} 
-                handleDeleteRecipe={handleDeleteRecipe} 
+                handleDeleteRecipe={handleDeleteRecipe}
+                handleSelectedRecipe={handleSelectedRecipe}
             />
             <Info {...info} />
             <Instructions instructions={instructions} />
