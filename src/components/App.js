@@ -47,6 +47,13 @@ function App() {
     setRecipes([...recipes, newRecipe])
   }
 
+  function handleRecipeChange(id, recipe) {
+    const newRecipes = [...recipes]
+    const index = newRecipes.findIndex(r => r.id === id)
+    newRecipes[index] = recipe
+    setRecipes(newRecipes)
+  }
+
   function handleDeleteRecipe(id) {
     setRecipes(recipes.filter(recipe => recipe.id !== id))
     console.log(`I was called (handleDELETE)`);
@@ -60,7 +67,7 @@ function App() {
         handleDeleteRecipe={handleDeleteRecipe}
         handleSelectedRecipe={handleSelectedRecipe}
       />
-      {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
+      {selectedRecipe && <RecipeEdit recipe={selectedRecipe} handleRecipeChange={handleRecipeChange} />}
     </>
   )
 }

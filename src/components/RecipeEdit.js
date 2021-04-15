@@ -1,7 +1,7 @@
 import React from 'react'
 import RecipeIngredientEdit from './RecipeIngredientEdit';
 
-export default function RecipeEdit({ recipe }) {
+export default function RecipeEdit({ recipe, handleRecipeChange }) {
 
     const {
         id,
@@ -11,13 +11,24 @@ export default function RecipeEdit({ recipe }) {
         name
     } = recipe
 
+    function handleChange(changes) {
+        handleRecipeChange(id, { ...recipe, ...changes })
+    }
+
+    function handleIngredientChange(id, ingredient) {
+        const newIngredients = [...recipe.ingredients]
+        const index = newIngredients.findIndex(i => i.id === id)
+        newIngredients[index] = ingredient
+        handleChange({ ingredients: newIngredients })
+    }
+
     const recipeIngredientEditElements = ingredients.map(ingredient => {
         return (
-            <RecipeIngredientEdit key={id} ingredient={ingredient} />
+            <RecipeIngredientEdit key={id} ingredient={ingredient} handleIngredientChange={handleIngredientChange} />
         )
     })
     
-    console.log(id,info,ingredients,instructions,name,'This is the info.servings and info.cookTime-->',info.servings,info.cookTime);
+    console.log('This is the info.servings and info.cookTime-->');
 
     return (
         <div className="recipe-edit">
@@ -37,6 +48,7 @@ export default function RecipeEdit({ recipe }) {
                     name="name"
                     value={name} 
                     className="recipe-edit__input" 
+                    onInput={e => handleChange({ name: e.target.value })}
                 />
                 <label 
                     htmlFor="cookTime" 
@@ -48,7 +60,8 @@ export default function RecipeEdit({ recipe }) {
                     type="text" 
                     id="cookTime"
                     name="cookTime"
-                    value={info.cookTime} 
+                    value={info.cookTime}
+                    onInput={e => handleChange({ ...info, ...info.cookTime = e.target.value })}
                     className="recipe-edit__input" 
                 />
                 <label 
@@ -62,6 +75,7 @@ export default function RecipeEdit({ recipe }) {
                     id="servings"
                     name="servings"
                     value={info.servings}
+                    onChange={e => handleChange({ ...info, ...info.servings = parseInt(e.target.value) || '' })}
                     className="recipe-edit__input"
                     min="1" 
                 />
@@ -74,10 +88,10 @@ export default function RecipeEdit({ recipe }) {
                 <textarea 
                     id="instructions"
                     name="instructions"
-                    className="recipe-edit__input" 
-                >
-                    {instructions}
-                </textarea>
+                    className="recipe-edit__input"
+                    value={instructions}
+                    onInput={e => handleChange({ instructions: e.target.value })}
+                />
             </div>
             <br />
             <label  className="recipe-edit__label">Ingredients</label>
