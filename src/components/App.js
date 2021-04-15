@@ -29,21 +29,22 @@ function App() {
   function handleAddRecipe() {
     const newRecipe = {
       id: v4(),
-      name: 'New',
+      name: '',
       info: {
         servings: 1,
-        cookTime: '1:00'
+        cookTime: ''
       },
-      instructions: 'Inst.',
+      instructions: '',
       ingredients: [
         {
           id: v4(),
-          name: "name",
-          amount: '-- Kg'
+          name: "",
+          amount: ''
         }
       ]
     }
 
+    handleSelectedRecipe(newRecipe.id)
     setRecipes([...recipes, newRecipe])
   }
 
@@ -55,8 +56,10 @@ function App() {
   }
 
   function handleDeleteRecipe(id) {
+    if (selectedRecipeId != null && selectedRecipeId === id) {
+      setSelectedRecipeId(undefined)
+    }
     setRecipes(recipes.filter(recipe => recipe.id !== id))
-    console.log(`I was called (handleDELETE)`);
   }
 
   return (
@@ -67,7 +70,12 @@ function App() {
         handleDeleteRecipe={handleDeleteRecipe}
         handleSelectedRecipe={handleSelectedRecipe}
       />
-      {selectedRecipe && <RecipeEdit recipe={selectedRecipe} handleRecipeChange={handleRecipeChange} />}
+      {selectedRecipe && <RecipeEdit 
+          recipe={selectedRecipe} 
+          handleRecipeChange={handleRecipeChange}
+          handleSelectedRecipe={handleSelectedRecipe}
+        />
+      }
     </>
   )
 }

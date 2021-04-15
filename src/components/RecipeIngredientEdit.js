@@ -1,14 +1,15 @@
 import React from 'react'
 
-export default function RecipeIngredientEdit({ ingredient, handleIngredientChange }) {
+export default function RecipeIngredientEdit({ ingredient, handleIngredientChange, handleDeleteIngredient }) {
 
     const {
+        id,
         name,
         amount
     } = ingredient
 
     function handleChange(changes) {
-        handleIngredientChange(ingredient.id, { ...ingredient, ...changes })
+        handleIngredientChange(id, { ...ingredient, ...changes })
     }
 
     console.log(name,amount,'This is the RecipeIngredientEdit component',ingredient);
@@ -26,7 +27,12 @@ export default function RecipeIngredientEdit({ ingredient, handleIngredientChang
                 value={amount}
                 onInput={e => handleChange({ amount: e.target.value })}
             />   
-            <button className="btn btn--danger" >&times;</button>   
+            <button 
+                className="btn btn--danger" 
+                onClick={() => handleDeleteIngredient(id)} 
+            >
+                &times;
+            </button>   
         </>
     )
 }
