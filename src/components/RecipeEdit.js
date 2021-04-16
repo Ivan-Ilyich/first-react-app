@@ -31,7 +31,7 @@ export default function RecipeEdit({
         const newIngredient = {
             id: v4(),
             name: '',
-            amoun: ''
+            amount: ''
         }
         handleChange({ ingredients: [...recipe.ingredients, newIngredient] })
     }
@@ -45,7 +45,7 @@ export default function RecipeEdit({
     const recipeIngredientEditElements = ingredients.map(ingredient => {
         return (
             <RecipeIngredientEdit 
-                key={id} 
+                key={ingredient.id} 
                 ingredient={ingredient} 
                 handleIngredientChange={handleIngredientChange}
                 handleDeleteIngredient={handleDeleteIngredient}
@@ -125,12 +125,15 @@ export default function RecipeEdit({
             </div>
             <br />
             <label  className="recipe-edit__label">Ingredients</label>
-            <div className="recipe-edit__ingredient-grid">
-                <div>Name</div>
-                <div>Amount</div>
-                <div></div>
-                {recipeIngredientEditElements}
-            </div>
+            <>{ingredients.length > 0 && recipeIngredientEditElements != null && 
+                <div className="recipe-edit__ingredient-grid">
+                    <div>Name</div>
+                    <div>Amount</div>
+                    <div></div>
+                    {recipeIngredientEditElements}
+                </div>
+                }
+            </>
             <div className="recipe-edit__add-ingredient-button-container">
                 <button 
                     className="btn btn--primary"

@@ -35,13 +35,7 @@ function App() {
         cookTime: ''
       },
       instructions: '',
-      ingredients: [
-        {
-          id: v4(),
-          name: "",
-          amount: ''
-        }
-      ]
+      ingredients: []
     }
 
     handleSelectedRecipe(newRecipe.id)
