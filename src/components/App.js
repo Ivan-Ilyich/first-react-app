@@ -3,6 +3,7 @@ import RecipeList from './RecipeList';
 import RecipeEdit from './RecipeEdit';
 import '../css/app.css'
 import { v4 } from 'uuid';
+import SearchBar from './SearchBar';
 
 const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes'
 
@@ -21,11 +22,11 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
   }, [recipes])
-  
+
   function handleSelectedRecipe(id) {
     setSelectedRecipeId(id)
   }
-
+  
   function handleAddRecipe() {
     const newRecipe = {
       id: v4(),
@@ -58,6 +59,7 @@ function App() {
 
   return (
     <>
+      <SearchBar recipes={recipes} handleSelectedRecipe={handleSelectedRecipe} />
       <RecipeList 
         recipes={recipes}
         handleAddRecipe={handleAddRecipe}

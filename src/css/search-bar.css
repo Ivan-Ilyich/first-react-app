@@ -1,0 +1,20 @@
+.recipe__search-bar-container {
+    width: 100%;
+    text-align: center;
+    margin: 0.2rem;
+}
+
+.recipe__search-bar {
+    width: 30%;
+    height: 1.4rem;
+    max-height: 1.5rem;
+    font-size: large;
+    padding: 0.1rem 0.2rem;
+    outline: none;
+}
+
+.recipe__search-bar-button {
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
