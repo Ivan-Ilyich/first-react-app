@@ -43,6 +43,15 @@ function App() {
     setRecipes([...recipes, newRecipe])
   }
 
+  function handleRecipeSearchSort(id) {
+    const newRecipes = [...recipes]
+    const selectedIndex = newRecipes.findIndex(r => r.id === id)
+    const firstRecipe = newRecipes[0]
+    newRecipes[0] = newRecipes[selectedIndex]
+    newRecipes[selectedIndex] = firstRecipe
+    setRecipes(newRecipes)
+  }
+
   function handleRecipeChange(id, recipe) {
     const newRecipes = [...recipes]
     const index = newRecipes.findIndex(r => r.id === id)
@@ -59,7 +68,7 @@ function App() {
 
   return (
     <>
-      <SearchBar recipes={recipes} handleSelectedRecipe={handleSelectedRecipe} />
+      <SearchBar recipes={recipes} handleSelectedRecipe={handleSelectedRecipe} handleRecipeSearchSort={handleRecipeSearchSort} />
       <RecipeList 
         recipes={recipes}
         handleAddRecipe={handleAddRecipe}

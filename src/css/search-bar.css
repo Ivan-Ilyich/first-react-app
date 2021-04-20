@@ -1,7 +1,8 @@
 .recipe__search-bar-container {
     width: 100%;
     text-align: center;
-    margin: 0.2rem;
+    margin-bottom: 0.2rem;
+    background: linear-gradient(to right, #0088CC, #00aaff );
 }
 
 .recipe__search-bar {
@@ -11,6 +12,13 @@
     font-size: large;
     padding: 0.1rem 0.2rem;
     outline: none;
+    background: white;
+    transition: 1s ease-in-out;
+    border-radius: 5px;
+}
+
+.recipe__search-bar:focus {
+    background: linear-gradient(to right, #0CE8E2, #0DFF9C)
 }
 
 .recipe__search-bar-button {
