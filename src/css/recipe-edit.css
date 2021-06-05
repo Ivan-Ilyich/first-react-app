@@ -60,6 +60,7 @@ textarea.recipe-edit__input {
 }
 
 @media (max-width: 1000px) {
+
     .recipe-edit__details-grid,
     .recipe-edit__ingredient-grid {
         grid-template-columns: 1fr;

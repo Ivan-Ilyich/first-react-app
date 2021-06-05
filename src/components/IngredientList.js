@@ -1,27 +1,17 @@
-import React from 'react'
-import Ingredients from './Ingredients'
+import React from "react";
+import Ingredients from "./Ingredients";
 
 export default function IngredientList({ ingredients }) {
-    
-    // console.log('This is the INGREDIENTS -->', ingredients);
+  const ingredientElements = ingredients.map(ingredient => {
+    return <Ingredients key={ingredient.id} {...ingredient} />;
+  });
 
-    const ingredientElements = ingredients.map(ingredient => {
-        return (
-            <Ingredients 
-                key={ingredient.id}
-                {...ingredient}
-            />
-        )
-    })
-
-    return (
-        <div className="recipe__row">
-            <span className="recipe__label">
-                Ingredients:
-            </span>
-            <div className="recipe__value recipe__value--indented ingredient__grid">
-                {ingredientElements}
-            </div>
-        </div>
-    )
+  return (
+    <div className="recipe__row">
+      <span className="recipe__label">Ingredients:</span>
+      <div className="recipe__value recipe__value--indented ingredient__grid">
+        {ingredientElements}
+      </div>
+    </div>
+  );
 }

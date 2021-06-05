@@ -3,7 +3,6 @@
 @import 'header.css';
 @import 'ingredient-list.css';
 @import 'recipe.css';
-@import 'info.css';
 @import 'button.css';
 @import 'recipe-edit.css';
 @import 'search-bar.css';
@@ -11,7 +10,7 @@
 *,
 *::before,
 *::after {
-    font-family: Gotham Rounded,sans-serif;
+    font-family: Gotham Rounded, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

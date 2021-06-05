@@ -2,11 +2,12 @@
     width: 100%;
     text-align: center;
     margin-bottom: 0.2rem;
-    background: linear-gradient(to right, #0088CC, #00aaff );
+    background: linear-gradient(to right, #0088CC, #00aaff);
 }
 
 .recipe__search-bar {
     width: 30%;
+    text-align: center;
     height: 1.4rem;
     max-height: 1.5rem;
     font-size: large;
@@ -25,4 +26,3 @@
     text-align: center;
     margin-top: 0.2rem;
 }
-
