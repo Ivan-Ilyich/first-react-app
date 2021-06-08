@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header";
-import Info from "./Info";
-import IngredientList from "./IngredientList";
-import Instructions from "./Instructions";
+import Header from "./Header/Header";
+import Info from "./Info/Info";
+import IngredientList from "./IngredientList/IngredientList";
+import Instructions from "./Instructions/Instructions";
 
 export default function Recipe(props) {
   const {

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import RecipeList from "./RecipeList";
-import RecipeEdit from "./RecipeEdit";
-import "../css/app.css";
+import RecipeList from "./components/Main/RecipeList/RecipeList";
+import RecipeEdit from "./components/Main/RecipeEdit/RecipeEdit";
+import "./css/app.css";
 import { v4 } from "uuid";
-import SearchBar from "./SearchBar";
-import sampleRecipes from "../sampleRecipes.json";
+import SearchBar from "./components/Main/SearchBar/SearchBar";
+import sampleRecipes from "./sampleRecipes.json";
 
 const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
 

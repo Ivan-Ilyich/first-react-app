@@ -1,5 +1,5 @@
 import React from "react";
-import Recipe from "./Recipe";
+import Recipe from "./Recipe/Recipe";
 
 export default function RecipeList(props) {
   const { recipes, handleAddRecipe, handleDeleteRecipe, handleSelectedRecipe } =
