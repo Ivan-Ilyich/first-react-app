@@ -16,6 +16,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Fetch existing recipes from public APIs (suggested: [Public Recipe APIs](https://rapidapi.com/blog/recipe-apis/))
 - Dark theme switch button
 
+# App Screenshots
+
+### Web
+
+<table>
+  <tr>
+    <td><img src="./public/images/Screenshot from 2021-07-11 21-52-36.png" /></td>
+  </tr>
+</table>
+
 # Quick Start
 
 ## Available Scripts
